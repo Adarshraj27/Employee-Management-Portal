@@ -1,195 +1,166 @@
-\documentclass[letterpaper,11pt]{article}
+<p align="center">
+ 
+</p>
+<p align="center">
+    <h1 align="center">EMPLOYEE_MANAGEMENT_SYSTEM</h1>
+</p>
+<p align="center">
+    <em>Manage your employee data with a seamless CRUD interface built with Node.js, Express.js, and MongoDB.</em>
+</p>
+<p align="center">
+   <img src="https://img.shields.io/github/license/Adarshraj27/Employee-Management-Portal?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+   <img src="https://img.shields.io/github/last-commit/Adarshraj27/Employee-Management-Portal?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+   <img src="https://img.shields.io/github/languages/top/Adarshraj27/Employee-Management-Portal?style=flat&color=0080ff" alt="repo-top-language">
+   <img src="https://img.shields.io/github/languages/count/Adarshraj27/Employee-Management-Portal?style=flat&color=0080ff" alt="repo-language-count">
+</p>
+<p align="center">
+      <em>Built with the tools and technologies:</em>
+</p>
+<p align="center">
+   <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black" alt="JavaScript">
+   <img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
+   <img src="https://img.shields.io/badge/MongoDB-47A248.svg?style=flat&logo=MongoDB&logoColor=white" alt="MongoDB">
+   <img src="https://img.shields.io/badge/Mongoose-880000.svg?style=flat&logo=Mongoose&logoColor=white" alt="Mongoose">
+</p>
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\input{glyphtounicode}
+<br>
 
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+##### 🔗 Table of Contents
 
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
+- [📍 Overview](#-overview)
+- [👾 Features](#-features)
+- [📂 Repository Structure](#-repository-structure)
+- [🧩 Modules](#-modules)
+- [🚀 Getting Started](#-getting-started)
+    - [🔖 Prerequisites](#-prerequisites)
+    - [📦 Installation](#-installation)
+    - [🤖 Usage](#-usage)
+    - [🧪 Tests](#-tests)
+- [📌 Project Roadmap](#-project-roadmap)
+- [🤝 Contributing](#-contributing)
+- [🎗 License](#-license)
+- [🙌 Acknowledgments](#-acknowledgments)
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+---
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+## 📍 Overview
 
-\urlstyle{same}
+The **Employee Management System** is a RESTful API built with **Node.js**, **Express.js**, and **MongoDB** for managing employee records. It enables efficient CRUD operations on employee data such as adding new employees, retrieving employee information, updating records, and deleting them.
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+The system provides a robust backend for handling employee management efficiently, leveraging MongoDB for storing and retrieving data with **Mongoose** as the ODM.
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+---
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+## 👾 Features
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
+- **Get All Employees**: Retrieve a list of all employees.
+- **Get Employee by ID**: Fetch details of a specific employee by their unique ID.
+- **Create Employee**: Add new employees to the database.
+- **Update Employee**: Modify details of existing employees.
+- **Delete Employee**: Remove employee records from the system.
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
+---
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
+## 📂 Repository Structure
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
+```sh
+└── Employee-Management-Portal/
+    ├── README.md
+    ├── Routes
+    ├── db.js
+    ├── model
+    ├── package-lock.json
+    ├── package.json
+    └── server.js
+```
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+---
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+## 🚀 Getting Started
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+### 🔖 Prerequisites
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ensure you have the following installed on your machine:
 
+- **Node.js**
+- **MongoDB**
+- **Postman** (optional but recommended)
 
-\begin{document}
+### 📦 Installation
 
-%----------HEADER----------
-\begin{center}
-    \textbf{\Huge \scshape Adarsh Raj} \\ \vspace{1pt}
-    \small +91-9155023324 $|$ \href{mailto:adarshraj9155@gmail.com}{\underline{adarshraj9155@gmail.com}} $|$ 
-    \href{https://linkedin.com}{\underline{linkedin.com}} $|$
-    \href{https://github.com}{\underline{github.com}} \\
-    \small Patna, Bihar
-\end{center}
+1. Clone the repository:
+```sh
+git clone https://github.com/Adarshraj27/Employee-Management-Portal.git
+```
 
+2. Navigate to the project directory:
+```sh
+cd Employee-Management-Portal
+```
 
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Indian Institute of Technology Patna}{Patna, Bihar}
-      {Bachelor of Technology in Mechanical Engineering (CPI: 8.06/10)}{2022 -- 2026 (Expected)}
-    \resumeSubheading
-      {ABR Foundation School}{Sasaram, Bihar}
-      {CBSE Class XII (Percentage: 90.8\%)}{Apr 2019 -- July 2021}
-    \resumeSubheading
-      {DAV Public School}{Sasaram, Bihar}
-      {CBSE Class X (Percentage: 95.4\%)}{March 2019}
-  \resumeSubHeadingListEnd
+3. Install dependencies:
+```sh
+npm install
+```
 
+### 🤖 Usage
 
-%-----------SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: C++, Python, HTML/CSS, JavaScript, SQL} \\
-     \textbf{Frameworks/Libraries}{: React.js, Express.js, Node.js, NumPy, Pandas, Mongoose} \\
-     \textbf{Databases}{: MongoDB} \\
-     \textbf{Relevant Coursework}{: Data Structures, Algorithms Analysis, Operating Systems, OOP, Artificial Intelligence, Data Analytics, Machine Learning.}
-    }}
- \end{itemize}
+Run the project using:
 
+```sh
+node server.js
+```
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Real Time Chat App} $|$ \emph{React.js, Node.js, WebSocket, HTML, CSS}}{April 2025}
-          \resumeItemListStart
-            \resumeItem{Developed a real-time chat system to facilitate instant and seamless communication between users using WebSocket technology.}
-            \resumeItem{Implemented secure User Authentication and Authorization using JWT (JSON Web Tokens) to ensure protected access.}
-            \resumeItem{Designed an interactive and highly responsive User Interface (UI) using ReactJS for an enhanced user experience.}
-          \resumeItemListEnd
+### 🧪 Tests
 
-      \resumeProjectHeading
-          {\textbf{\href{https://github.com/Adarshraj27/Employee-Management-Portal}{Employee Management System}} $|$ \emph{Node.js, Express.js, MongoDB}}{November 2024}
-          \resumeItemListStart
-            \resumeItem{Architected a RESTful API using Node.js and Express.js to facilitate seamless CRUD operations for managing employee records.}
-            \resumeItem{Integrated MongoDB with Mongoose ODM to enforce robust data schemas, validation rules, and efficient data retrieval.}
-            \resumeItem{Implemented advanced search capabilities allowing retrieval of employees by first name and specific ID lookup.}
-            \resumeItem{Built a modular backend structure ensuring scalability, featuring specific routes for updates, deletions, and record creation.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+Run tests using:
 
+```sh
+npm test
+```
 
-%-----------ACCOMPLISHMENTS-----------
-\section{Accomplishments}
- \resumeItemListStart
-    \resumeItem{Ranked among the \textbf{top 1 percent} in JEE Advanced 2022.}
-    \resumeItem{Ranked in the \textbf{top 3 percentile} out of 0.9 million candidates in JEE Mains 2022.}
-    \resumeItem{Graded in the \textbf{top 10\%} by academic performance in the Mechanical Engineering Department of IIT Patna.}
-    \resumeItem{Solved \textbf{200+} coding questions on platforms like LeetCode and GeeksforGeeks.}
- \resumeItemListEnd
+---
 
+## 📌 Project Roadmap
 
-%-----------LEADERSHIP & EXTRACURRICULAR-----------
-\section{Leadership \& Extracurricular}
-  \resumeSubHeadingListStart
+- [X] **Task 1**: Implement basic CRUD operations for employees.
+- [ ] **Task 2**: Add pagination for employee listing.
+- [ ] **Task 3**: Add search filters (by department, salary range, etc.).
+- [ ] **Task 4**: Implement JWT authentication for secure access.
 
-    \resumeSubheading
-      {Celesta Tech Fest}{IIT Patna}
-      {Core Team Volunteer}{2024 -- Present}
-      \resumeItemListStart
-        \resumeItem{Participated in coding competitions and Robowar events during the fest.}
-      \resumeItemListEnd
+---
 
-    \resumeSubheading
-      {Training and Placement Cell (TPC)}{IIT Patna}
-      {Volunteer}{November 2023}
-      \resumeItemListStart
-        \resumeItem{Assisted in coordinating placement activities and logistical support for recruiting companies.}
-      \resumeItemListEnd
+## 🤝 Contributing
 
-    \resumeSubheading
-      {Yavanika Drama Club}{IIT Patna}
-      {Member}{December 2022}
-      \resumeItemListStart
-        \resumeItem{Active participant in stage dramas and Nukkad Natak (street plays), contributing to cultural events.}
-      \resumeItemListEnd
+Contributions are welcome! You can contribute via:
 
-  \resumeSubHeadingListEnd
+- **Report Issues**:  
+  https://github.com/Adarshraj27/Employee-Management-Portal/issues
 
-\end{document}
+- **Submit Pull Requests**:  
+  https://github.com/Adarshraj27/Employee-Management-Portal/pulls
+
+- **Discussions**:  
+  https://github.com/Adarshraj27/Employee-Management-Portal/discussions
+
+---
+
+## 🎗 License
+
+This project is licensed under the **Arpit-Singh License**.
+
+---
+
+## 🙌 Acknowledgments
+
+Thanks to:
+
+- Node.js, Express.js, MongoDB, and Mongoose communities  
+- Postman for API testing  
+- Mentors and contributors who supported this project  
+
+---
+
+🚀 **Your README is now correctly linked to your repository:**
+
+👉 **https://github.com/Adarshraj27/Employee-Management-Portal.git**
